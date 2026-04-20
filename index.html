@@ -13,7 +13,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* FIXED HEADER */
+/* HEADER */
 h1.header {
     position: fixed;
     top: 10px;
@@ -24,49 +24,61 @@ h1.header {
     border-radius: 20px;
     border: 1px solid #eee;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    font-size: 20px;
+    font-size: 18px;
     z-index: 999;
 }
 
-/* PUSH CONTENT DOWN (1cm gap approx) */
+/* MAIN CONTAINER */
 .container {
     padding: 20px;
     padding-top: 80px;
+    max-width: 900px;
+    margin: auto;
 }
 
-/* Card */
+/* CARD */
 .card {
     background: #fff;
-    padding: 15px;
+    padding: 12px;
     border-radius: 15px;
     margin-bottom: 15px;
     border: 1px solid #eee;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-img {
+/* IMAGES RESPONSIVE */
+.card img {
     border-radius: 10px;
+    flex-shrink: 0;
 }
 
-/* Links */
+/* TEXT */
+span {
+    font-size: 14px;
+}
+
+/* LINKS */
 a {
-    color: #000;
     text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    color: #000;
 }
 
-/* Background image */
+/* BACKGROUND IMAGE */
 .creator-img {
     position: fixed;
     top: 10px;
     right: 10px;
-    width: 400px;
-    height: 700px;
+    width: 40vw;
+    max-width: 350px;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
     opacity: 0.25;
+    z-index: -1;
 }
 
 /* SOCIAL BAR */
@@ -78,7 +90,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
 }
 
 /* ICONS */
@@ -90,13 +102,49 @@ a {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    cursor: pointer;
 }
 
-/* PROFILE ICON */
+/* PROFILE */
 .profile-icon {
     width: 50px;
     height: 50px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+
+    h1.header {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .container {
+        padding: 15px;
+        padding-top: 70px;
+    }
+
+    .card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card img {
+        width: 80px;
+        height: auto;
+    }
+
+    span {
+        font-size: 13px;
+    }
+
+    .social-bar {
+        gap: 30px;
+    }
+
+    .creator-img {
+        width: 60vw;
+        opacity: 0.15;
+    }
 }
 </style>
 
@@ -104,19 +152,13 @@ a {
 
 <body>
 
-<!-- FIXED HEADER -->
-<h1 class="header">🎬 Mere_Gaon</h1>
+<h1 class="header">🎬 Mere Gaon</h1>
 
-<!-- BACKGROUND IMAGE -->
 <img src="bgPhoto.jpg" class="creator-img">
 
 <div class="container">
 
-<!-- YouTube Logo -->
 <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="38" height="38">
-
-<!--Channels  -->
-
 
 <a href="https://www.youtube.com/@MereGaon" target="_blank">
     <div class="card">
@@ -141,50 +183,49 @@ a {
 
 <h2>🔥 Top Videos</h2>
 
-<a href="https://www.youtube.com/watch?v=kuBnGqQ-PZI&list=RDkuBnGqQ-PZI&start_radio=1" target="_blank">
-    <div class="card">
-        <img src="video1.jpg" width="100" height="60">
-        <span style="color:blue;">▶ Tu Puri Malika (1M+ Views)</span>
-    </div>
+<a href="https://www.youtube.com/watch?v=kuBnGqQ-PZI" target="_blank">
+<div class="card">
+    <img src="video1.jpg" width="100" height="60">
+    <span style="color:blue;">▶ Tu Puri Malika (1M+ Views)</span>
+</div>
 </a>
 
 <a href="https://www.youtube.com/watch?v=39WFfhpnl_Y" target="_blank">
-    <div class="card">
-        <img src="video2.png" width="100" height="60">
-        <span style="color:blue;">▶ De Re Kalia De</span>
-    </div>
+<div class="card">
+    <img src="video2.png" width="100" height="60">
+    <span style="color:blue;">▶ De Re Kalia De</span>
+</div>
 </a>
 
-<a href="https://www.youtube.com/watch?v=RV8VyvQvhWk&list=RDRV8VyvQvhWk&start_radio=1" target="_blank">
-    <div class="card">
-        <img src="video3.png" width="100" height="60">
-        <span style="color:blue;">▶ Hasuchu Re Kalia</span>
-    </div>
+<a href="https://www.youtube.com/watch?v=RV8VyvQvhWk" target="_blank">
+<div class="card">
+    <img src="video3.png" width="100" height="60">
+    <span style="color:blue;">▶ Hasuchu Re Kalia</span>
+</div>
 </a>
 
-<a href="https://www.youtube.com/watch?v=RV8VyvQvhWk&list=RDRV8VyvQvhWk&start_radio=1" target="_blank">
-    <div class="card">
-        <img src="video4.png" width="100" height="60">
-        <span style="color:blue;">▶ Aloda E Jibana</span>
-    </div>
+<a href="https://www.youtube.com/watch?v=RV8VyvQvhWk" target="_blank">
+<div class="card">
+    <img src="video4.png" width="100" height="60">
+    <span style="color:blue;">▶ Aloda E Jibana</span>
+</div>
 </a>
 
 </div>
 
-<!-- SOCIAL BAR -->
 <div class="social-bar">
 
-    <a href="https://www.facebook.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-    </a>
+<a href="https://www.facebook.com">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+</a>
 
-    <a href="https://www.instagram.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-    </a>
+<a href="https://www.instagram.com">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
 
-    <a href="about.html">
-        <img src="profile-removebg.png" class="profile-icon">
-    </a>
+<a href="about.html">
+    <img src="profile-removebg.png" class="profile-icon">
+</a>
 
 </div>
 
