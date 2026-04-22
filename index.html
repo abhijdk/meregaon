@@ -8,9 +8,9 @@
 <style>
 body {
     margin: 0;
-    background: #ffffff;
+    background: transparent;
     color: #000;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* HEADER */
@@ -19,7 +19,7 @@ h1.header {
     top: 10px;
     left: 10px;
     margin: 0;
-    background: #fff;
+    background: rgba(255,255,255,0.7);
     padding: 8px 14px;
     border-radius: 20px;
     border: 1px solid #eee;
@@ -32,13 +32,14 @@ h1.header {
 .container {
     padding: 20px;
     padding-top: 80px;
-    max-width: 900px;
+    padding-bottom: 120px; /* 👈 gap from footer */
+    max-width: 1000px;
     margin: auto;
 }
 
 /* CARD */
 .card {
-    background: #fff;
+    background: rgba(255,255,255,0.7);
     padding: 12px;
     border-radius: 15px;
     margin-bottom: 15px;
@@ -50,7 +51,7 @@ h1.header {
     gap: 12px;
 }
 
-/* IMAGES RESPONSIVE */
+/* IMAGES */
 .card img {
     border-radius: 10px;
     flex-shrink: 0;
@@ -58,7 +59,7 @@ h1.header {
 
 /* TEXT */
 span {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* LINKS */
@@ -70,48 +71,47 @@ a {
 /* BACKGROUND IMAGE */
 .creator-img {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 40vw;
-    max-width: 350px;
-    height: auto;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
-    border-radius: 8px;
     opacity: 0.25;
     z-index: -1;
 }
 
-/* SOCIAL BAR */
+/* SOCIAL BAR (FOOTER) */
 .social-bar {
     position: fixed;
-    bottom: 10px;
+    bottom: 12px;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
 }
 
 /* ICONS */
 .social-bar img {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     padding: 5px;
-    background: #fff;
+    background: rgba(255,255,255,0.8);
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 /* PROFILE */
 .profile-icon {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
 }
 
-/* MOBILE FIX */
-@media (max-width: 600px) {
+/* RESPONSIVE */
+@media (max-width: 768px) {
 
     h1.header {
         font-size: 16px;
@@ -120,17 +120,12 @@ a {
 
     .container {
         padding: 15px;
-        padding-top: 70px;
-    }
-
-    .card {
-        flex-direction: row;
-        align-items: center;
+        padding-top: 75px;
+        padding-bottom: 120px;
     }
 
     .card img {
-        width: 80px;
-        height: auto;
+        width: 70px;
     }
 
     span {
@@ -138,12 +133,23 @@ a {
     }
 
     .social-bar {
-        gap: 30px;
+        gap: 35px;
+    }
+}
+
+/* VERY SMALL DEVICES */
+@media (max-width: 420px) {
+
+    .social-bar {
+        gap: 25px;
     }
 
-    .creator-img {
-        width: 60vw;
-        opacity: 0.15;
+    .card {
+        padding: 10px;
+    }
+
+    span {
+        font-size: 12px;
     }
 }
 </style>
@@ -158,55 +164,55 @@ a {
 
 <div class="container">
 
-<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="38" height="38">
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="38">
 
 <a href="https://www.youtube.com/@MereGaon" target="_blank">
-    <div class="card">
-        <img src="channel1.jpg" width="38" height="38">
-        <span style="color:blue;">Mere Gaon</span>
-    </div>
+<div class="card">
+    <img src="channel1.jpg" width="38">
+    <span style="color:blue;">Mere Gaon</span>
+</div>
 </a>
 
 <a href="https://www.youtube.com/@Tulsivillage" target="_blank">
-    <div class="card">
-        <img src="channel2.jpg" width="38" height="38">
-        <span style="color:blue;">Tulsi Village</span>
-    </div>
+<div class="card">
+    <img src="channel2.jpg" width="38">
+    <span style="color:blue;">Tulsi Village</span>
+</div>
 </a>
 
 <a href="https://www.youtube.com/@TheDesiDanceHub" target="_blank">
-    <div class="card">
-        <img src="channel3.jpg" width="38" height="38">
-        <span style="color:blue;">Desi Dance Hub</span>
-    </div>
+<div class="card">
+    <img src="channel3.jpg" width="38">
+    <span style="color:blue;">Desi Dance Hub</span>
+</div>
 </a>
 
 <h2>🔥 Top Videos</h2>
 
 <a href="https://www.youtube.com/watch?v=kuBnGqQ-PZI" target="_blank">
 <div class="card">
-    <img src="video1.jpg" width="100" height="60">
-    <span style="color:blue;">▶ Tu Puri Malika (1M+ Views)</span>
+    <img src="video1.jpg" width="100">
+    <span style="color:blue;">▶ Tu Puri Malika</span>
 </div>
 </a>
 
 <a href="https://www.youtube.com/watch?v=39WFfhpnl_Y" target="_blank">
 <div class="card">
-    <img src="video2.png" width="100" height="60">
+    <img src="video2.png" width="100">
     <span style="color:blue;">▶ De Re Kalia De</span>
 </div>
 </a>
 
 <a href="https://www.youtube.com/watch?v=RV8VyvQvhWk" target="_blank">
 <div class="card">
-    <img src="video3.png" width="100" height="60">
+    <img src="video3.png" width="100">
     <span style="color:blue;">▶ Hasuchu Re Kalia</span>
 </div>
 </a>
 
 <a href="https://www.youtube.com/watch?v=RV8VyvQvhWk" target="_blank">
 <div class="card">
-    <img src="video4.png" width="100" height="60">
+    <img src="video4.png" width="100">
     <span style="color:blue;">▶ Aloda E Jibana</span>
 </div>
 </a>
